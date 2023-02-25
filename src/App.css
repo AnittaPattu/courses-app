@@ -60,7 +60,6 @@ p {
 .show-course-btn {
   position: absolute;
   left: 22%;
-  top: 95px;
   width: 160px;
   height: 39px;
   border: 1px solid violet;
@@ -139,4 +138,18 @@ p {
 .author-name {
   min-width: 168px;
   display: inline-block;
+}
+
+.login-label-text,
+.registration-label-text,
+.auth-btn {
+  display: block;
+  margin-top: 10px;
+}
+
+.login-form-content,
+.registration-form-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
