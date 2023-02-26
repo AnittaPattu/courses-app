@@ -13,7 +13,6 @@ import CreateCourse from "./components/CreateCourse/createCourse";
 import { Login } from "./components/Authorization/components/Login/login";
 import CourseInfo from "./components/Courses/components/course-info/course-info";
 import Courses from "./components/Courses/courses";
-import Header from "./components/Header/header";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

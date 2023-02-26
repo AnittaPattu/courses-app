@@ -2,20 +2,23 @@ import Logo from "./components/Logo/logo";
 import logo from "../../assets/logo.png";
 import Button from "../../common/Button/button";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-function Header(props) {
+function Header() {
   const HEADER_BUTTON_TEXT = "Logout";
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
   let hideName = true;
   const name = "";
-  if (location.pathname.includes("course")) {
-    hideName = false;
-  }
-  if (localStorage.getItem("token")) {
-    name = localStorage.getItem("token").user.name;
-  }
+
+  useEffect(() => {
+    if (location.pathname.includes("course")) {
+      hideName = false;
+    }
+    if (localStorage.getItem("token")) {
+      name = localStorage.getItem("token").user.name;
+    }
+  }, []);
 
   function logout() {
     localStorage.removeItem("token");

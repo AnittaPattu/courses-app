@@ -5,8 +5,10 @@ import Input from "../../../../common/Input/input";
 
 export const Login = (props) => {
   const navigate = useNavigate();
+  const name = "";
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
+  const loginUrl = "http://localhost:4000/login";
 
   const emailData = (data) => {
     setemail(data);
@@ -17,20 +19,31 @@ export const Login = (props) => {
 
   function login() {}
 
-  async function formData(data) {
+  async function formData() {
     var data = {
-      name: "",
-      email: email,
-      password: password,
+      name,
+      email,
+      password,
     };
-    console.log(data);
-    const response = await fetch("http://localhost:4000/login", {
+    const requestOptions = {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    };
+    const response = await fetch(loginUrl, requestOptions);
+    fetch(loginUrl, requestOptions)
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((data) => console.log(data));
+    const loginData = await response.json();
+    if (loginData.successful) {
+      navigate("/login", { replace: true });
+    } else {
+      error = loginData.errors;
+      alert(error);
+    }
   }
 
   return (
@@ -65,7 +78,7 @@ export const Login = (props) => {
       </div>
       <p className="align-center">
         If you not have an account you can{" "}
-        <Link to={`/registration`}>Registration</Link>
+        <Link to={`registration`}>Registration</Link>
       </p>
     </div>
   );
