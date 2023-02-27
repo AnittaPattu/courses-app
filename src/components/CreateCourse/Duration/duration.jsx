@@ -11,7 +11,6 @@ function Duration(props) {
   };
 
   function getDuration(durationTime) {
-    console.log(durationTime);
     setDuration(durationTime);
     let updatedValue = {};
     updatedValue = durationTime;

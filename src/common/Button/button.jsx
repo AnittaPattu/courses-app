@@ -1,5 +1,5 @@
 import "../Common.module.css";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import PropTypes from "prop-types";
 
 export const Button = (props) => {
   return (
@@ -14,3 +14,9 @@ export const Button = (props) => {
 };
 
 export default Button;
+
+Button.propTypes = {
+  class: PropTypes.string,
+  id: PropTypes.string,
+  handleClick: PropTypes.func,
+};

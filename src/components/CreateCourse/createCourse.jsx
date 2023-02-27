@@ -64,12 +64,7 @@ function CreateCourse() {
       (authData) => authData.id !== authorDat.id
     );
     setCourseAuthor(courseAuth);
-    // updateAuthorArray(courseAuth, "delete");
   };
-
-  // function updateAuthorArray(data, type) {
-  //   state.getAuthorsList(data, type);
-  // }
 
   function updateCourseArray(data) {
     navigate("/courses", {
@@ -81,7 +76,6 @@ function CreateCourse() {
   }
 
   function getTitle(data) {
-    console.log(data);
     title = data;
   }
 

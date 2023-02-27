@@ -1,15 +1,13 @@
 import Author from "../author/author";
 import { getCourseDuration } from "../../../../helper/getCourseDuration";
-import Button from "../../../../common/Button/button";
 import { getFormattedDate } from "../../../../helper/formatCreationDate";
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-const CourseInfo = (props) => {
+const CourseInfo = () => {
   const AUTHOR = "Authors: ";
   const DURATION = "Duration: ";
   const CREATED = "Created: ";
-  const BUTTON_TEXT = "Show Courses";
   let { courseId } = useParams();
   const { state } = useLocation();
   const courseData = state.course;
