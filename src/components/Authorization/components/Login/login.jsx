@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../../../../common/Button/button";
 import Input from "../../../../common/Input/input";
 
-export const Login = (props) => {
+export const Login = () => {
   const navigate = useNavigate();
   const name = "";
   const [email, setemail] = useState("");
@@ -31,12 +31,6 @@ export const Login = (props) => {
       body: JSON.stringify(data),
     };
     const response = await fetch(loginUrl, requestOptions);
-    fetch(loginUrl, requestOptions)
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((data) => console.log(data));
     const loginData = await response.json();
     if (loginData.successful) {
       navigate("/login", { replace: true });

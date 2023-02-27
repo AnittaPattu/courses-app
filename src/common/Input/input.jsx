@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Input = (props) => {
   return (
     <>
@@ -16,3 +18,11 @@ const Input = (props) => {
 };
 
 export default Input;
+
+Input.propTypes = {
+  class: PropTypes.string,
+  id: PropTypes.string,
+  change: PropTypes.func,
+  plceholder: PropTypes.string,
+  inputType: PropTypes.string,
+};

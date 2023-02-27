@@ -1,6 +1,7 @@
 import Input from "../../../../common/Input/input";
 import Button from "../../../../common/Button/button";
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const SearchBar = (props) => {
   const SEARCH_TEXT = "Search";
@@ -31,3 +32,9 @@ const SearchBar = (props) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  setSearch: PropTypes.string,
+  placeholder: PropTypes.string,
+  class: PropTypes.string,
+};

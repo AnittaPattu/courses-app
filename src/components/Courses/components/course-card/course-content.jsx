@@ -3,6 +3,7 @@ import { getCourseDuration } from "../../../../helper/getCourseDuration";
 import Button from "../../../../common/Button/button";
 import { getFormattedDate } from "../../../../helper/formatCreationDate";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const CourseCard = (props) => {
   const AUTHOR = "Author: ";
@@ -27,7 +28,6 @@ const CourseCard = (props) => {
       <div>
         {cardList
           .filter((data) => {
-            console.log(data);
             return (
               data.title
                 .toLowerCase()
@@ -71,3 +71,8 @@ const CourseCard = (props) => {
 };
 
 export default CourseCard;
+
+CourseCard.propTypes = {
+  coursesList: PropTypes.Array,
+  authorsList: PropTypes.Array,
+};

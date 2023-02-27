@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Author = (props) => {
   let authorName;
   const authorsList = props.authorsList;
@@ -6,3 +8,8 @@ const Author = (props) => {
 };
 
 export default Author;
+
+Author.propTypes = {
+  coursesList: PropTypes.Array,
+  id: PropTypes.string,
+};

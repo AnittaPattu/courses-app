@@ -12,11 +12,11 @@ function Header() {
   const name = "";
 
   useEffect(() => {
-    if (location.pathname.includes("course")) {
+    if (!["login", "registration"].includes(location.pathname)) {
       hideName = false;
     }
     if (localStorage.getItem("token")) {
-      name = localStorage.getItem("token").user.name;
+      name = JSON.parse(localStorage.getItem("token")).user.name;
     }
   }, []);
 
