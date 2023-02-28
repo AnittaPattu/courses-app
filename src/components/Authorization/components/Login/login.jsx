@@ -20,7 +20,7 @@ export const Login = () => {
   function login() {}
 
   async function formData() {
-    var data = {
+    const data = {
       name,
       email,
       password,
