@@ -73,6 +73,6 @@ const CourseCard = (props) => {
 export default CourseCard;
 
 CourseCard.propTypes = {
-  coursesList: PropTypes.Array,
-  authorsList: PropTypes.Array,
+  coursesList: PropTypes.arrayOf(PropTypes.object),
+  authorsList: PropTypes.arrayOf(PropTypes.object),
 };

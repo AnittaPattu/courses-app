@@ -10,6 +10,6 @@ const Author = (props) => {
 export default Author;
 
 Author.propTypes = {
-  coursesList: PropTypes.Array,
+  coursesList: PropTypes.arrayOf(PropTypes.object),
   id: PropTypes.string,
 };

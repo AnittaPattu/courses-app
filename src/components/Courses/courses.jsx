@@ -5,10 +5,12 @@ import React, { useEffect, useState } from "react";
 import { mockedCoursesList as cardList } from "../../constant";
 import { mockedAuthorsList as authorsList } from "../../constant";
 import { useLocation, useNavigate } from "react-router-dom";
+import getAllCourses from "../../store/service";
 
 const Courses = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
+  const dispatch = useDispatch();
   const PLACEHOLDER_TEXT = "Enter course name or id";
   const ADD_COURSE_BUTTON_TEXT = "Add new course";
   const [updatedSearch, startSearch] = useState("");
@@ -21,13 +23,18 @@ const Courses = () => {
     authorList = state.authorList;
   }
   useEffect(() => {
-    if (
-      localStorage.getItem("token") === undefined ||
-      localStorage.getItem("token") === null
-    ) {
-      navigate("/login", { replace: true });
-    }
+    getCourses();
+    // if (
+    //   localStorage.getItem("token") === undefined ||
+    //   localStorage.getItem("token") === null
+    // ) {
+    //   navigate("/login", { replace: true });
+    // }
   }, []);
+
+  function getCourses() {
+    console.log(getAllCourses());
+  }
 
   function addCourseClick() {
     navigate("add", {
