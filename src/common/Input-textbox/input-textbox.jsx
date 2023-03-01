@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const InputTextbox = (props) => {
   return (
     <>
@@ -13,3 +15,9 @@ const InputTextbox = (props) => {
 };
 
 export default InputTextbox;
+
+InputTextbox.propTypes = {
+  textAreaclass: PropTypes.string,
+  textChange: PropTypes.func,
+  plceholder: PropTypes.string,
+};

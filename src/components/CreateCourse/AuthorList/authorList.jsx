@@ -7,8 +7,6 @@ function AuthorList(props) {
   function removeAuthor() {
     if (event.target.tagName === "BUTTON") {
       props.removeAuthor(authorList[parseInt(event.target.id)]);
-      console.log(event.target.id);
-      console.log(authorList[parseInt(event.target.id)]);
     }
   }
 
