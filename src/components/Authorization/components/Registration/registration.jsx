@@ -21,20 +21,20 @@ const Registration = () => {
 
   function registration() {}
 
-  async function formData() {
+  async function formData(event) {
+    event.preventDefault();
     const newUser = {
       name,
       password,
       email,
     };
 
-    const response = await fetch(url, {
+    const requestOptions = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    });
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
+    const response = await fetch(url, requestOptions);
     const registrationData = await response.json();
     if (registrationData.successful) {
       navigate("/login", { replace: true });

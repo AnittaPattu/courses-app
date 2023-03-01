@@ -7,7 +7,7 @@ function App() {
   const getItem = localStorage.getItem("token");
 
   useEffect(() => {
-    if (getItem && getItem.token) {
+    if (getItem && JSON.parse(getItem)?.result) {
       navigate("/courses");
     } else {
       navigate("/");

@@ -38,7 +38,6 @@ function CreateCourse() {
     if (authorData.name) {
       state.authorsList.push(authorData);
     }
-    updateAuthorArray(authorData, "");
   };
 
   const removeAuthor = (authorData) => {
@@ -51,7 +50,6 @@ function CreateCourse() {
       (authData) => authData.id !== authorData.id
     );
     setAuthorList(courseAuth);
-    updateAuthorArray(courseAuth, "delete");
   };
 
   const removeCourseAuthor = (authorDat) => {

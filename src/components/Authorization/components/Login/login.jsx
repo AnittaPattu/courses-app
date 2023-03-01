@@ -19,7 +19,8 @@ export const Login = () => {
 
   function login() {}
 
-  async function formData() {
+  async function formData(event) {
+    event.preventDefault();
     const data = {
       name,
       email,
@@ -33,9 +34,10 @@ export const Login = () => {
     const response = await fetch(loginUrl, requestOptions);
     const loginData = await response.json();
     if (loginData.successful) {
-      navigate("/login", { replace: true });
+      localStorage.setItem("token", JSON.stringify(loginData));
+      navigate("/courses", { replace: true });
     } else {
-      error = loginData.errors;
+      const error = loginData.result;
       alert(error);
     }
   }

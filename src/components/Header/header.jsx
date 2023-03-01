@@ -8,12 +8,12 @@ function Header() {
   const HEADER_BUTTON_TEXT = "Logout";
   const location = useLocation();
   const navigate = useNavigate();
-  let hideName = true;
-  const name = "";
+  let showName = false;
+  let name = "";
 
   useEffect(() => {
     if (!["login", "registration"].includes(location.pathname)) {
-      hideName = false;
+      showName = true;
     }
     if (localStorage.getItem("token")) {
       name = JSON.parse(localStorage.getItem("token")).user.name;
@@ -28,7 +28,7 @@ function Header() {
   return (
     <div className="header-container">
       <Logo imageURL={logo} />
-      {hideName === false && (
+      {showName && (
         <div className="float-right">
           <span className="px-3 font-weight-bold toUpper">{name}</span>
           <Button
